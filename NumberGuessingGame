@@ -1,0 +1,20 @@
+from random import randint
+print("a random number between 1 and 100 is= ",randint(1, 100))
+#special way of writing it
+#lets make a number guessing game
+def guess_number():
+    no=randint(1,100)
+    guess=0
+    guessno=0
+    print("welcome to the number guessing game")
+    while guess!=no:
+        guess=int(input("guess a number between 1 and 100: "))
+        if guess<no:
+            print("too low")
+        elif guess>no:
+            print("too high")
+        else:
+            print(f"congratulations you guessed the number in {guessno} guesses")
+        guessno+=1
+    print("game over")
+guess_number()
