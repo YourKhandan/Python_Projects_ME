@@ -1,0 +1,16 @@
+class implement:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def __str__(self):
+        return f"({self.x}+{self.y}i)"
+    #program to add two complex numbers
+    def __add__(self,other):
+        return implement(self.x+other.x,self.y+other.y)
+    #to multiply two complex numbers
+    def __mul__(self,other):
+        return implement(self.x*other.x-self.y*other.y,self.x*other.y+self.y*other.x)
+a=implement(2,3)
+b=implement(4,5)
+print(a+b)
+print(a*b)
