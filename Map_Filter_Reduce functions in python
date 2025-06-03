@@ -1,0 +1,35 @@
+#map is a built-in function that applies a function to all items in an input list (or any iterable).
+# It returns a map object, which is an iterator.
+l=[1,2,3,4,5]
+#squared = list(map(lambda x: x**2, l))
+#or
+square=lambda x:x**2
+sqList=map(square, l)   
+print(sqList)  # Output: <map object at 0x...>
+print(list(sqList))  # Output: [1, 4, 9, 16, 25]
+#or 
+for item in sqList:
+    print(item)  # Output: 1, 4, 9, 16, 25
+
+    
+#filter is a built-in function that filters items out of an iterable based on a function that returns True or False.
+# It returns a filter object, which is also an iterator.
+def is_even(n):
+    return n % 2 == 0
+onlyEven=filter(is_even, l)#filter(function, iterable)
+print(onlyEven)  # Output: <filter object at 0x...>
+print(list(onlyEven))  # Output: [2, 4]
+
+
+#reduce is a function that applies a rolling computation to sequential pairs of values in an iterable.
+#we need to import it from the functools module.
+from functools import reduce
+def sum(x, y):
+    return x + y
+sumResult = reduce(sum, l)  # reduce(function, iterable)
+print(sumResult)  # Output: 15
+#it works as follows:
+# 1. sum(1, 2) = 3
+# 2. sum(3, 3) = 6
+# 3. sum(6, 4) = 10
+# 4. sum(10, 5) = 15,so the final result is 15
