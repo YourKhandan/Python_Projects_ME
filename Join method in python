@@ -1,0 +1,8 @@
+#join only works with iterables... strings, lists, tuples, etc.
+def join_strings(strings_list):
+    return '-'.join(strings_list)
+# Example usage
+strings_list = ['apple', 'banana', 'cherry']
+joined_string = join_strings(strings_list)
+print(strings_list)
+print(joined_string)  # Output: apple, banana, cherry 
